@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up Form</title>
+    <link rel="stylesheet" href="meyer.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,45 +15,67 @@
 
         <aside>
             <h1>Lorem.</h1>
-            <img src="./team-up.svg">
+            <img src="./svg/team-up.svg">
         </aside>
 
         <main>
 
-            <h2>Sign up to <em>Lorem</em></h2>
+            <h2>S'inscrire à <em>Lorem.</em></h2>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus felis augue, in fringilla turpis malesuada ac. Integer at efficitur urna. In hac habitasse platea dictumst.</p>
 
             <form action="#" method="post">
         
                 <fieldset>
-                    <label for="prenom">Prénom</label>
-                    <input type="text" id="prenom" name="prenom" placeholder="Richard...">
-                    <label for="nom">Nom</label>
-                    <input type="text" id="nom" name="nom" placeholder="Giesler...">
+
+                    <div class="group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Richard..." required>
+                    </div>
+
+                    <div class="group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" placeholder="Giesler..." required>
+                    </div>
         
                 </fieldset>
 
                 <fieldset>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Richard.Breckenridge@gmail.com...">
-                    <label for="phone">Téléphone</label>
-                    <input type="tel" id="phone" name="phone" placeholder="06 12 36 14 19...">
+
+                    <div class="group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="Richard.Breckenridge@gmail.com..." required>
+                    </div>
+
+                    <div class="group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="06 12 36 14 19...">
+                    </div>
         
                 </fieldset>
 
                 <fieldset>
-                    <label for="user_password">Mot de passe</label>
-                    <input type="password" name="password" id="user_password">
-                    <label for="confirm_password">Confirmation du mot de passe</label>
-                    <input type="password" name="confirm_password" id="confirm_password">
+
+                    <div class="group">
+                        <label for="user_password">Mot de passe *</label>
+                        <input type="password" name="password" id="user_password" required>
+                    </div>
+
+                    <div class="group">
+                        <label for="confirm_password">Confirmation du mot de passe *</label>
+                        <input type="password" name="confirm_password" id="confirm_password" required>
+                    </div>
         
                 </fieldset>
 
-                <input type="checkbox" id="rgpd" name="rdgp">
-                <label for="rdgp">J'accepte la <a href="#">politique de confidentialité</a></label>
+                <div id="rgpd-container">
+                    <input type="checkbox" id="rgpd" name="rdgp" required>
+                    <label for="rdgp">J'accepte la <a href="#">politique de confidentialité</a> *</label>
+                </div>
+
                 <button type="submit">Créer le compte</button>
-                <p>Déjà membre ? <a>Se connecter.</a></p>
+                
+                <p>Déjà membre ? <a href="#">Se connecter.</a></p>
         
             </form>
 
