@@ -1,0 +1,193 @@
+@font-face {
+font-family: 'Futura LT Regular';
+font-style: normal;
+font-weight: normal;
+src: url(./fonts/FuturaLT-Book.woff) format('woff');
+}
+
+@font-face {
+font-family: 'Futura LT Regular';
+font-style: normal;
+font-weight: bold;
+src: url(./fonts/FuturaLT-Bold.woff) format('woff');
+}
+
+@font-face {
+font-family: 'Futura LT Regular';
+font-style: normal;
+font-weight: 700;
+src: url(./fonts/FuturaLT-Heavy.woff) format('woff');
+}
+
+$blue: #08D9D6;
+$pink: #FF2E63;
+$grey: #A2B1B1;
+$white : #FFFFFF;
+$l-grey: #F5F5F5;
+$black: #252A34;
+
+:root {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Futura LT Regular', sans-serif;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100vw;
+}
+
+aside {
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        gap: 40px;
+        padding: 20px 0;
+        }
+
+    width: 40%;
+    background-color: $blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    img {
+        max-width: 90%;
+    }
+
+    h1 {
+        color: $white;
+        font-size: calc(7.5rem);
+        font-weight: bold;
+    }
+}
+
+main {
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 40px;;
+        padding-bottom: 280px;
+        }
+    
+    width: 60%;
+    background-color: #F5F5F5;
+    background-image: url(./svg/wave.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 180%;
+    padding: 60px 100px;
+
+    h2 {
+        font-size: 3rem;
+        color: $pink;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+
+        em {
+            color: $blue;
+        }
+    }
+
+    h2 + p {
+        color: $grey;
+        font-size: 1rem;
+        line-height: 125%;
+        max-width: 450px;
+    }
+
+}
+
+form {
+
+    margin-top: 40px;
+
+    .group {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    fieldset {
+        display: flex;
+        gap: 20px;
+        flex-wrap:wrap;
+    }
+
+    label:not(#rgpd + label) {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $blue;
+    }
+
+    button[type="submit"] {
+        background-color: $pink;
+        border: none;
+        color: $white;
+        font-size: 1.5rem;
+        font-family: 'Futura LT Regular', sans-serif;
+        font-weight: 700;
+        padding: 10px 20px calc(10px + 0.2rem) 20px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        margin-top: 30px;
+        cursor: pointer;
+    }
+
+    input:not([type="checkbox"]) {
+        background-color: $white;
+        border: 1px solid #CFCFCF;
+        border-radius: 5px;
+        padding: 4px;
+        margin: 5px 0 20px 0;
+        font-family: 'Futura LT Regular', sans-serif;
+    }
+
+    input::placeholder {
+        font-family: 'Futura LT Regular', sans-serif;
+    }
+
+    input:focus {
+        border: 1px solid $blue;
+    }
+
+    input:valid {
+        background-color: #eaf7e1;
+    }
+
+    input:invalid {
+        background-color: #f7e8e6;
+    }
+
+    #rgpd-container {
+        margin-top: 10px;
+        color: $black;
+    }
+
+    #rgpd + label {
+        color: $pink;
+
+        a {
+            font-weight: bold
+        }
+
+        a:visited {
+            color: inherit;
+        }
+    }
+
+    p {
+        color: $black;
+
+        a {
+            font-weight: bold;
+            color: $pink;
+        }
+    }
+
+}
